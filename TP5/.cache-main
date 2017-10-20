@@ -1,0 +1,157 @@
+format version: 5
+output mode:
+1 items
+0 -> multiple
+output directories:
+1 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin
+compile options:
+8 items
+0 -> -javabootclasspath
+1 -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/zipfs.jar:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/ext/sunec.jar
+2 -> -javaextdirs
+3 ->  
+4 -> -bootclasspath
+5 -> /usr/local/eclipse4.3Scala/plugins/org.scala-lang.scala-library_2.11.7.v20150622-112736-1fbce4612c.jar
+6 -> -encoding
+7 -> UTF-8
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.7
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> false
+products:
+18 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/SequenceImp$$anon$1$$anonfun$1.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/SequenceImp$$anon$1.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/SequenceImp.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/HOL$.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/HOL$equal.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/HOL.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Lista$$anonfun$size_list$1.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Lista$.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Lista.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$Suc$.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$Suc.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$nat.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$zero_nat$.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$zero_nat.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/tp5$.class
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/tp5.class
+binary dependencies:
+5 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/lib/newtp0.jar
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/rt.jar
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> /usr/local/eclipse4.3Scala/plugins/org.scala-lang.scala-library_2.11.7.v20150622-112736-1fbce4612c.jar
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/rt.jar
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> /usr/local/eclipse4.3Scala/plugins/org.scala-lang.scala-library_2.11.7.v20150622-112736-1fbce4612c.jar
+direct source dependencies:
+1 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> /private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+18 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> TP5.SequenceImp
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> TP5.SequenceImp$$anon$1
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> TP5.SequenceImp$$anon$1$$anonfun$1
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.HOL
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.HOL$
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.HOL$equal
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Lista
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Lista$
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Lista$$anonfun$size_list$1
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Nat
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Nat$
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Nat$Suc
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Nat$Suc$
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Nat$nat
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Nat$zero_nat
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.Nat$zero_nat$
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.tp5
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> TP5.tp5$
+used names:
+0 items
+product stamps:
+18 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/HOL$.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/HOL$equal.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/HOL.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Lista$$anonfun$size_list$1.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Lista$.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Lista.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$Suc$.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$Suc.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$nat.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$zero_nat$.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat$zero_nat.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/Nat.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/SequenceImp$$anon$1$$anonfun$1.class -> lastModified(1507909991000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/SequenceImp$$anon$1.class -> lastModified(1507909991000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/SequenceImp.class -> lastModified(1507909991000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/tp5$.class -> lastModified(1507909886000)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/bin/TP5/tp5.class -> lastModified(1507909886000)
+source stamps:
+3 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> hash(ab112618f05b61e1bf20416b795a24f87266f68b)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> hash(9986cc1ffd1bc621a33051d122fa8451b715b585)
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/p1/Main.java -> hash(89941f510ca805fd35781ecb6474bdeb8a775c45)
+binary stamps:
+3 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/lib/newtp0.jar -> lastModified(1473668940000)
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/rt.jar -> lastModified(1503910101000)
+/usr/local/eclipse4.3Scala/plugins/org.scala-lang.scala-library_2.11.7.v20150622-112736-1fbce4612c.jar -> lastModified(1481537911000)
+class names:
+3 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/lib/newtp0.jar -> test0.Sequence
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.144-5.b01.fc25.x86_64/jre/lib/rt.jar -> java.lang.Object
+/usr/local/eclipse4.3Scala/plugins/org.scala-lang.scala-library_2.11.7.v20150622-112736-1fbce4612c.jar -> scala.Array
+internal apis:
+3 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHDwE3wlAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAAHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+ABV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAPVFA1LlNlcXVlbmNlSW1wdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAIQ2xhc3NEZWZ1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGw7kU8R9EVMyQIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHABc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHBzcQB+AC4Bc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+ABVMAAlpbmhlcml0ZWRxAH4AFUwAB3BhcmVudHNxAH4AFXhxAH4ANXNxAH4ALgF1cQB+ABAAAAAAcHNxAH4ALgF1cQB+ABAAAAAAcHNxAH4ALgF1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAA3NyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4AHEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+ADR0AAhTZXF1ZW5jZXNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4ANHNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAAnNyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+ABx4cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAFdGVzdDBzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4ATnNxAH4AQXQABk9iamVjdHNxAH4ARXNxAH4ASHVxAH4ASwAAAANzcQB+AE10AARqYXZhc3EAfgBNdAAEbGFuZ3EAfgBSc3EAfgBBdAADQW55c3EAfgBFc3EAfgBIdXEAfgBLAAAAAnNxAH4ATXQABXNjYWxhcQB+AFJwcHVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+ABx4cHQAA1RQNXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZwehR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+ABxMAA9zb3VyY2VEaXJlY3RvcnlxAH4AHHhwdABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9iaW50AEEvcHJpdmF0ZS9zdHVkZW50LzgvMDgvMTcwMDk1MDgvRG9jdW1lbnRzL1dvcmtzcGFjZS9BQ0ZfVFAvVFA1L3NyY3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUqxEmGPBbYeG/IEFreVok+HJm9os=
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHDh30z9AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAAHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAARzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+ABV4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAHVFA1LkhPTHVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABk1vZHVsZXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgATeHNidGkuU2FmZUxhenkkSW1wbDuRTxH0RUzJAgADWgAIYml0bWFwJDBMAAJfdHQAEkxqYXZhL2xhbmcvT2JqZWN0O0wABGV2YWx0ABFMc2NhbGEvRnVuY3Rpb24wO3hyABZ4c2J0aS5hcGkuQWJzdHJhY3RMYXp503e1AV+756ACAAB4cABwc3IAIHhzYnRpLlNhZmVMYXp5JCRhbm9uZnVuJHN0cmljdCQxAAAAAAAAAAACAAFMAAd2YWx1ZSQxcQB+AC94cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AC4AcHNxAH4AM3NyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgAVTAAJaW5oZXJpdGVkcQB+ABVMAAdwYXJlbnRzcQB+ABV4cQB+ADdzcQB+AC4AcHNxAH4AM3VxAH4AEAAAAABzcQB+AC4AcHNxAH4AM3VxAH4AEAAAAABzcQB+AC4AcHNxAH4AM3VyABFbTHhzYnR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
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/p1/Main.java -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHC4IVHqAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAAHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAHNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZu3Ih1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+ABp4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmN1cgACW0Ks8xf4BghU4AIAAHhwAAAAFImUH1EMqAX9NXgey2R0veuKd1xF
+external apis:
+0 items
+source infos:
+3 items
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/Sequence.scala -> 
+AAAAAAAAAAA=
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/TP5/tp5.scala -> 
+AAAAAAAAAAA=
+/private/student/8/08/17009508/Documents/Workspace/ACF_TP/TP5/src/p1/Main.java -> 
+AAAAAAAAAAA=
+compilations:
+8 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZTsvR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
+1 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZVllJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
+2 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZWkUN1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
+3 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZdzAx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
+4 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZe4jR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
+5 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZu3Ih1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
+6 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZvBW51cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
+7 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABXxZwehR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAQS9wcml2YXRlL3N0dWRlbnQvOC8wOC8xNzAwOTUwOC9Eb2N1bWVudHMvV29ya3NwYWNlL0FDRl9UUC9UUDUvYmludABBL3ByaXZhdGUvc3R1ZGVudC84LzA4LzE3MDA5NTA4L0RvY3VtZW50cy9Xb3Jrc3BhY2UvQUNGX1RQL1RQNS9zcmM=
