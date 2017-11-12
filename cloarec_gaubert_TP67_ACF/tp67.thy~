@@ -199,19 +199,56 @@ fun san1::"statement \<Rightarrow> bool"
 where
 "san1 (Seq s1 s2) = ((san1 s1)\<and>(san1 s2))" |
 "san1 (Exec _) = False" |
+"san1 (If c s1 s2) = ((san1 s1) \<and> (san1 s2))"|
 "san1 _ = True"
 
 fun san2::"statement \<Rightarrow> bool"
 where
 "san2 (Seq s1 s2) = ((san1 s1)\<and>(san1 s2))" |
-"san2 (Exec e) = (e=(Constant 0))"|
+"san2 (Exec e) = (e\<noteq>(Constant 0))"|
+"san2 (If c s1 s2) = ((san2 s1) \<and> (san2 s2))"|
 "san2 _ = True"
+
+datatype absInt = Neg | Zero | Pos | Undef | Any
+
+fun toAbs::"int \<Rightarrow> absInt"
+where
+"toAbs x = (if (x = 0) then Zero else (if x > 0 then Pos else Neg) )"
+
+fun absPlus::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
+where
+"absPlus _ Any = Any" |
+"absPlus Any _ = Any" |
+"absPlus Undef _ = Undef" |
+"absPlus _ Undef = Undef" |
+"absPlus Pos Pos = Pos" |
+"absPlus Pos Neg = Any" |
+"absPlus Neg Pos = Any" |
+"absPlus Neg Neg = Neg" |
+"absPlus x Zero = x" |
+"absPlus Zero x = x"
 
 fun san3::"statement \<Rightarrow> bool"
 where
-"san3 (Seq s1 s2) = ((san1 s1)\<and>(san1 s2))" |
-"san3 (Exec e) =(if(\<exists> x. evalE e x = 0) then False else True) )"|
+"san3 (Seq s1 s2) = ((san3 s1)\<and>(san3 s2))" |
+"san3 (Exec e) =((\<forall> x. (evalE e x) \<noteq>  0))"|
+"san3 (If c s1 s2) = ((san3 s1) \<and> (san3 s2))"|
 "san3 _ = True"
+
+fun san3Aux::"statement \<Rightarrow> symTable \<Rightarrow> symTable"
+where
+"san3Aux (Seq s1 s2) st = ((san3Aux s1 st)\<and>(san3Aux s2 st))" |
+"san3Aux (Exec e) st = (EvalE e st) = 0"|
+"san3Aux (If c s1 s2) st = ( if(EvalC c st) then (san3Aux s1 st) else (san3Aux s2 st))"|  
+"san3Aux (Aff s e) st =  ((s,(evalE e t))#t)" |
+"san3Aux (Seq s1 s2) st = 
+    (let st2 = (san3Aux s1 st) in san3Aux s2 st2)" |
+"san3Aux _ st = st"
+
+
+lemma correct1:"\<forall> x y s. BAD (evalS s (x,y,[])) \<noteq> san3 s" (* correction *)
+nitpick
+
 
 (* ----- Restriction de l'export Scala (Isabelle 2014) -------*)
 (* ! ! !  NE PAS MODIFIER ! ! ! *)

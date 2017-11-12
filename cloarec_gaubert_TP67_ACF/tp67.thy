@@ -209,15 +209,61 @@ where
 "san2 (If c s1 s2) = ((san2 s1) \<and> (san2 s2))"|
 "san2 _ = True"
 
+datatype absInt = Neg | Zero | Pos | Undef | Any
+
+fun toAbs::"int \<Rightarrow> absInt"
+where
+"toAbs x = (if (x = 0) then Zero else (if x > 0 then Pos else Neg) )"
+
+fun absPlus::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
+where
+"absPlus _ Any = Any" |
+"absPlus Any _ = Any" |
+"absPlus Undef _ = Undef" |
+"absPlus _ Undef = Undef" |
+"absPlus Pos Pos = Pos" |
+"absPlus Pos Neg = Any" |
+"absPlus Neg Pos = Any" |
+"absPlus Neg Neg = Neg" |
+"absPlus x Zero = x" |
+"absPlus Zero x = x"
+
+fun san3tmp::"statement \<Rightarrow> bool"
+where
+"san3tmp Skip x=x" |
+"san3tmp (Aff s e)  (t,inch,outch)=  (((s,(evalE e t))#t),inch,outch)" |
+"san3tmp (If c s1 s2)  (t,inch,outch)=  (if (evalC c t) then (evalS s1 (t,inch,outch)) else (evalS s2 (t,inch,outch)))" |
+"san3tmp (Seq s1 s2) (t,inch,outch)= 
+    (let (t2,inch2,outch2)= (evalS s1 (t,inch,outch)) in
+        evalS s2 (t2,inch2,outch2))" |
+"san3tmp (Read _) (t,[],outch)= (t,[],outch)" |
+"san3tmp (Read s) (t,(x#xs),outch)= (((s,x)#t),xs,outch)" |
+"san3tmp (Print e) (t,inch,outch)= (t,inch,((P (evalE e t))#outch))" |
+"san3tmp (Exec e) (t,inch,outch)= 
+  (let res= evalE e t in
+   (t,inch,((X res)#outch)))"
+
 fun san3::"statement \<Rightarrow> bool"
 where
-"san3 (Seq s1 s2) = ((san1 s1)\<and>(san1 s2))" |
+"san3 (Seq s1 s2) = ((san3 s1)\<and>(san3 s2))" |
 "san3 (Exec e) =((\<forall> x. (evalE e x) \<noteq>  0))"|
 "san3 (If c s1 s2) = ((san3 s1) \<and> (san3 s2))"|
 "san3 _ = True"
 
+fun san3Aux::"statement \<Rightarrow> symTable \<Rightarrow> symTable"
+where
+"san3Aux (Seq s1 s2) st = ((san3Aux s1 st)\<and>(san3Aux s2 st))" |
+"san3Aux (Exec e) st = (EvalE e st) = 0"|
+"san3Aux (If c s1 s2) st = ( if(EvalC c st) then (san3Aux s1 st) else (san3Aux s2 st))"|  
+"san3Aux (Aff s e) st =  ((s,(evalE e t))#t)" |
+"san3Aux (Seq s1 s2) st = 
+    (let st2 = (san3Aux s1 st) in san3Aux s2 st2)" |
+"san3Aux _ st = st"
+
+
 lemma correct1:"\<forall> x y s. BAD (evalS s (x,y,[])) \<noteq> san3 s" (* correction *)
 nitpick
+
 
 (* ----- Restriction de l'export Scala (Isabelle 2014) -------*)
 (* ! ! !  NE PAS MODIFIER ! ! ! *)
