@@ -56,6 +56,87 @@ definition "p3= (Seq (Aff ''x'' (Constant 0)) (Exec (Variable ''x'')))"
 definition "p4= (Seq (Read ''x'') (Print (Sum (Variable ''x'') (Constant 1))))"
 
 
+(* p5= {
+         x:=2
+         if(x = 0) {
+            print(x)
+         }else {
+            exec(x)
+         }
+       }
+
+       p5 \<rightarrow> innofensif
+*)
+definition "p5= (Seq (Aff ''x'' (Constant 2)) (If (Eq (Variable ''x'') (Constant 0)) (Print (Variable ''x'')) (Exec (Variable ''x''))))"
+
+(* p6= {
+         x:=2
+         if(x = 0) {
+            exec(x)
+         }else{
+            print(x)
+         }
+       }
+
+       p6 \<rightarrow> innofensif
+*)
+definition "p6= (Seq (Aff ''x'' (Constant 2)) (If (Eq (Variable ''x'') (Constant 0)) (Exec (Variable ''x'')) (Print (Variable ''x''))))"
+
+(* p7= {
+         read(x)
+         if(x = 0) {
+            exec(x)
+         }else{
+            print(x)
+         }
+       }
+
+       p7 \<rightarrow> dangereux
+*)
+definition "p7= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 0)) (Exec (Variable ''x'')) (Print (Variable ''x''))))"
+
+
+(* p8= {
+         read(x)
+         if(x = 0) {
+            print(x)
+         }else{
+            exec(x)
+         }
+       }
+
+       p8 \<rightarrow> innofensif
+*)
+definition "p8= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 0)) (Print (Variable ''x''))  (Exec (Variable ''x''))))"
+
+
+(* p9= {
+         read(x)
+         if(x = 2) {
+            print(x)
+         }else{
+            exec(x)
+         }
+       }
+
+       p9 \<rightarrow> dangereux
+*)
+definition "p9= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 2)) (Print (Variable ''x''))  (Exec (Variable ''x''))))"
+
+(* p10= {
+         read(x)
+         if(x = 2) {
+            exec(x)
+         }else{
+            print(x)
+         }
+       }
+
+       p10 \<rightarrow> innofensif
+*)
+definition "p10= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 2)) (Exec (Variable ''x'')) (Print (Variable ''x''))))"
+
+
 (* Le type des evenements soit X: execute, soit P: print *)
 datatype event= X int | P int
 
@@ -68,6 +149,7 @@ type_synonym inchan= "int list"
 definition "il1= [1,-2,10]"                                (* Un exemple de flux d'entree [1,-2,10]              *)
 
 type_synonym symTable= "(string * int) list"
+
 definition "(st1::symTable)= [(''x'',10),(''y'',12)]"      (* Un exemple de table de symbole *)
 
 
@@ -209,7 +291,9 @@ where
 "san2 (If c s1 s2) = ((san2 s1) \<and> (san2 s2))"|
 "san2 _ = True"
 
-datatype absInt = Neg | Zero | Pos | Undef | Any
+datatype absInt = Neg | Zero | NonZero | Pos | Undef | Any
+
+type_synonym absSymTable= "(string * absInt) list"
 
 fun toAbs::"int \<Rightarrow> absInt"
 where
@@ -226,23 +310,124 @@ where
 "absPlus Neg Pos = Any" |
 "absPlus Neg Neg = Neg" |
 "absPlus x Zero = x" |
-"absPlus Zero x = x"
+"absPlus Zero x = x" |
+"absPlus NonZero NonZero = NonZero" |
+"absPlus NonZero _ = Any" |
+"absPlus _ NonZero = Any" 
 
-fun san3tmp::"statement \<Rightarrow> bool"
+fun absMinus::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
 where
-"san3tmp Skip x=x" |
-"san3tmp (Aff s e)  (t,inch,outch)=  (((s,(evalE e t))#t),inch,outch)" |
-"san3tmp (If c s1 s2)  (t,inch,outch)=  (if (evalC c t) then (evalS s1 (t,inch,outch)) else (evalS s2 (t,inch,outch)))" |
-"san3tmp (Seq s1 s2) (t,inch,outch)= 
-    (let (t2,inch2,outch2)= (evalS s1 (t,inch,outch)) in
-        evalS s2 (t2,inch2,outch2))" |
-"san3tmp (Read _) (t,[],outch)= (t,[],outch)" |
-"san3tmp (Read s) (t,(x#xs),outch)= (((s,x)#t),xs,outch)" |
-"san3tmp (Print e) (t,inch,outch)= (t,inch,((P (evalE e t))#outch))" |
-"san3tmp (Exec e) (t,inch,outch)= 
-  (let res= evalE e t in
-   (t,inch,((X res)#outch)))"
+"absMinus _ Any = Any" |
+"absMinus Any _ = Any" |
+"absMinus Undef _ = Undef" |
+"absMinus _ Undef = Undef" |
+"absMinus Pos Pos = Any" |
+"absMinus Pos Neg = Pos" |
+"absMinus Neg Pos = Neg" |
+"absMinus Neg Neg = Any" |
+"absMinus x Zero = x" |
+"absMinus Zero Pos = Neg" |
+"absMinus Zero Neg = Pos" |
+"absMinus NonZero NonZero = NonZero" |
+"absMinus NonZero _ = Any" |
+"absMinus _ NonZero = Any" 
 
+(* return an absInt couple where the first correspond to the absInt of the variable if condition is true and the second if the condition is false *)
+fun evalCondition:: "condition \<Rightarrow> (string option*absInt*absInt)"
+  where
+"evalCondition (Eq (Variable x) (Constant c)) =(case toAbs c of Zero \<Rightarrow> (Some(x),Zero, NonZero) | _ \<Rightarrow> (Some(x), toAbs c, Any))" |
+"evalCondition c = (None, Any, Any)"
+
+(* return Neg : condition is false *) 
+(* return Pos : condition is true *) 
+(* return Zero : condition cannot be evaluated *)
+fun evalAbsInt:: "absInt \<Rightarrow> absInt \<Rightarrow> absInt"
+where
+"evalAbsInt Zero Zero = Pos" |
+"evalAbsInt Zero Pos = Neg" |
+"evalAbsInt Zero Neg = Neg" |
+"evalAbsInt Pos Zero = Neg" |
+"evalAbsInt Neg Zero = Neg" |
+"evalAbsInt NonZero Zero = Neg" |
+"evalAbsInt Zero NonZero = Neg" |
+"evalAbsInt Pos NonZero = Pos" |
+"evalAbsInt Neg NonZero = Pos" |
+"evalAbsInt _ _ = Zero"
+
+fun priorities::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
+where
+"priorities Undef _ = Undef" |
+"priorities _ Undef = Undef" |
+"priorities x y =(if(x=y) then x else Any)"
+
+fun mergeTwoAbsSymTable::"absSymTable \<Rightarrow> absSymTable \<Rightarrow> absSymTable"
+where
+"mergeTwoAbsSymTable t1 ((x2,y2)#t2) = (case (assoc x2 t1) of 
+                                                None \<Rightarrow> (mergeTwoAbsSymTable ((x2,y2)#t1) t2) 
+                                              | Some(r) \<Rightarrow>(mergeTwoAbsSymTable ((x2,(priorities y2 r))#t1) t2))"|
+"mergeTwoAbsSymTable ((x1,y1)#t1) [] = ((x1,y1)#t1)" |
+"mergeTwoAbsSymTable [] t2 = t2"
+
+(* Evaluation des expressions par rapport a une table de symboles *)
+fun evalEAbs:: "expression \<Rightarrow> absSymTable \<Rightarrow> absInt"
+where
+"evalEAbs (Constant s) t = toAbs s" |
+"evalEAbs (Variable s) t = (case (assoc s t) of None \<Rightarrow> Undef | Some(y) \<Rightarrow> y)" |
+"evalEAbs (Sum e1 e2) t = (absPlus (evalEAbs e1 t) (evalEAbs e2 t))" |
+"evalEAbs (Sub e1 e2) t = (absMinus (evalEAbs e1 t) (evalEAbs e2 t))"
+
+
+(* Evaluation des conditions par rapport a une table de symboles *)
+(* return Pos : condition is false *) 
+(* return Neg : condition is true *) 
+(* return Zero : condition cannot be evaluated *) 
+fun evalCAbs:: "condition \<Rightarrow> absSymTable \<Rightarrow> absInt"
+where
+"evalCAbs (Eq e1 e2) t =( evalAbsInt (evalEAbs e1 t) (evalEAbs e2 t))"
+
+(* Evaluation d'un programme par rapport a une table des symboles, a un flux d'entree et un flux de sortie. 
+   Rend un triplet: nouvelle table des symboles, nouveaux flux d'entree et sortie *)
+fun evalSAbs:: "statement \<Rightarrow> absSymTable \<Rightarrow> (absSymTable*bool)"
+where
+"evalSAbs Skip t =(t,True)" |
+"evalSAbs (Aff s e) t = ((s,(evalEAbs e t))#t, True)" |
+"evalSAbs (If c s1 s2) t =  (case evalCAbs c t of
+                      Pos  \<Rightarrow> (evalSAbs s1 t)
+                     |Neg \<Rightarrow> (evalSAbs s2 t)
+                     |Zero \<Rightarrow> (case evalCondition c of
+                        (None, a1, a2) \<Rightarrow> (let (t1,b1) = (evalSAbs s1 t) in
+                                          (let (t2, b2) = (evalSAbs s2 t) in 
+                                            (mergeTwoAbsSymTable t1 t2 ,b1 \<and> b2)))
+                       |(Some(x), a1, a2) \<Rightarrow> (let (t1,b1) = (evalSAbs s1 ((x,a1)#t)) in
+                                             (let (t2, b2) = (evalSAbs s2 ((x,a2)#t)) in 
+                                              (mergeTwoAbsSymTable t1 t2 ,b1 \<and> b2))) ))" |
+"evalSAbs (Seq s1 s2) t= (let (t1,b1) = (evalSAbs s1 t) in
+                              (let (t2, b2) = (evalSAbs s2 t1) in 
+                                (t2 ,b1 \<and> b2)))" |
+"evalSAbs (Read s) t = (((s,Any)#t), True)" |
+"evalSAbs (Print e) t= (t,True)" |
+"evalSAbs (Exec e) t= 
+  (case ( evalEAbs e t) of
+     Undef \<Rightarrow> (t,False)
+    | Any \<Rightarrow> (t,False)
+    | Zero \<Rightarrow> (t,False)
+    | _ \<Rightarrow> (t,True))"
+
+
+fun san3::"statement \<Rightarrow> bool"
+where
+"san3 s =(let (_,x) = evalSAbs s [] in x)"
+
+value "san3 p3"
+value "san3 p4"
+value "san3 p5"
+value "san3 p6"
+value "san3 p7"
+value "san3 p8"
+value "san3 p9"
+value "san3 p10"
+
+(*
 fun san3::"statement \<Rightarrow> bool"
 where
 "san3 (Seq s1 s2) = ((san3 s1)\<and>(san3 s2))" |
@@ -259,7 +444,7 @@ where
 "san3Aux (Seq s1 s2) st = 
     (let st2 = (san3Aux s1 st) in san3Aux s2 st2)" |
 "san3Aux _ st = st"
-
+*)
 
 lemma correct1:"\<forall> x y s. BAD (evalS s (x,y,[])) \<noteq> san3 s" (* correction *)
 nitpick
