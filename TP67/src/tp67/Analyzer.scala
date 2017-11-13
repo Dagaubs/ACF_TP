@@ -4,7 +4,6 @@ import utilities.Datatype._
 
 object Analyzer {
   def safe(p: statement): Boolean = {
-    //TODO!!
-    false
+      san3 p;
   }
 }

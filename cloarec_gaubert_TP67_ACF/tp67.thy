@@ -295,10 +295,13 @@ datatype absInt = Neg | Zero | NonZero | Pos | Undef | Any
 
 type_synonym absSymTable= "(string * absInt) list"
 
+(* return the absInt of an int *)
 fun toAbs::"int \<Rightarrow> absInt"
 where
 "toAbs x = (if (x = 0) then Zero else (if x > 0 then Pos else Neg) )"
 
+
+(* addition of two absInt *)
 fun absPlus::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
 where
 "absPlus _ Any = Any" |
@@ -315,6 +318,7 @@ where
 "absPlus NonZero _ = Any" |
 "absPlus _ NonZero = Any" 
 
+(* substraction of two absInt *)
 fun absMinus::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
 where
 "absMinus _ Any = Any" |
@@ -338,8 +342,9 @@ fun evalCondition:: "condition \<Rightarrow> (string option*absInt*absInt)"
 "evalCondition (Eq (Variable x) (Constant c)) =(case toAbs c of Zero \<Rightarrow> (Some(x),Zero, NonZero) | _ \<Rightarrow> (Some(x), toAbs c, Any))" |
 "evalCondition c = (None, Any, Any)"
 
-(* return Neg : condition is false *) 
-(* return Pos : condition is true *) 
+(* return the result of the equality of two absInt *)
+(* return Neg : the two absInt are inequal *) 
+(* return Pos : the two absInt are equal*) 
 (* return Zero : condition cannot be evaluated *)
 fun evalAbsInt:: "absInt \<Rightarrow> absInt \<Rightarrow> absInt"
 where
@@ -354,12 +359,15 @@ where
 "evalAbsInt Neg NonZero = Pos" |
 "evalAbsInt _ _ = Zero"
 
+(* given two absInt, return the union of both *)
 fun priorities::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
 where
 "priorities Undef _ = Undef" |
 "priorities _ Undef = Undef" |
 "priorities x y =(if(x=y) then x else Any)"
 
+
+(* given two absSymTable, return the union of both *)
 fun mergeTwoAbsSymTable::"absSymTable \<Rightarrow> absSymTable \<Rightarrow> absSymTable"
 where
 "mergeTwoAbsSymTable t1 ((x2,y2)#t2) = (case (assoc x2 t1) of 
@@ -368,7 +376,7 @@ where
 "mergeTwoAbsSymTable ((x1,y1)#t1) [] = ((x1,y1)#t1)" |
 "mergeTwoAbsSymTable [] t2 = t2"
 
-(* Evaluation des expressions par rapport a une table de symboles *)
+(* Evaluation des expressions par rapport a une table de symboles abstraits*)
 fun evalEAbs:: "expression \<Rightarrow> absSymTable \<Rightarrow> absInt"
 where
 "evalEAbs (Constant s) t = toAbs s" |
@@ -413,7 +421,7 @@ where
     | Zero \<Rightarrow> (t,False)
     | _ \<Rightarrow> (t,True))"
 
-
+(* return False : warning ! *)
 fun san3::"statement \<Rightarrow> bool"
 where
 "san3 s =(let (_,x) = evalSAbs s [] in x)"
@@ -427,25 +435,6 @@ value "san3 p8"
 value "san3 p9"
 value "san3 p10"
 
-(*
-fun san3::"statement \<Rightarrow> bool"
-where
-"san3 (Seq s1 s2) = ((san3 s1)\<and>(san3 s2))" |
-"san3 (Exec e) =((\<forall> x. (evalE e x) \<noteq>  0))"|
-"san3 (If c s1 s2) = ((san3 s1) \<and> (san3 s2))"|
-"san3 _ = True"
-
-fun san3Aux::"statement \<Rightarrow> symTable \<Rightarrow> symTable"
-where
-"san3Aux (Seq s1 s2) st = ((san3Aux s1 st)\<and>(san3Aux s2 st))" |
-"san3Aux (Exec e) st = (EvalE e st) = 0"|
-"san3Aux (If c s1 s2) st = ( if(EvalC c st) then (san3Aux s1 st) else (san3Aux s2 st))"|  
-"san3Aux (Aff s e) st =  ((s,(evalE e t))#t)" |
-"san3Aux (Seq s1 s2) st = 
-    (let st2 = (san3Aux s1 st) in san3Aux s2 st2)" |
-"san3Aux _ st = st"
-*)
-
 lemma correct1:"\<forall> x y s. BAD (evalS s (x,y,[])) \<noteq> san3 s" (* correction *)
 nitpick
 
@@ -456,6 +445,7 @@ nitpick
 
 code_reserved Scala
   expression condition statement 
+
 code_printing
   type_constructor expression \<rightharpoonup> (Scala) "expression"
   | constant Constant \<rightharpoonup> (Scala) "Constant"
@@ -492,9 +482,9 @@ import AutomaticConversion._
 
 
 (* Directive pour l'exportation de l'analyseur *)
-export_code ... in Scala 
-(* file "~/workspace/TP67/src/tp67/san.scala"   (* à adapter en fonction du chemin de votre projet TP67 *)
-*)
+export_code san3 in Scala 
+ file "../TP67/src/tp67/san.scala"   (* à adapter en fonction du chemin de votre projet TP67 *)
+
 
 
 end

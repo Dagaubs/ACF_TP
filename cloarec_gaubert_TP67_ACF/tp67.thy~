@@ -105,9 +105,36 @@ definition "p7= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 0)) (Exec (
          }
        }
 
-       p7 \<rightarrow> innofensif
+       p8 \<rightarrow> innofensif
 *)
 definition "p8= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 0)) (Print (Variable ''x''))  (Exec (Variable ''x''))))"
+
+
+(* p9= {
+         read(x)
+         if(x = 2) {
+            print(x)
+         }else{
+            exec(x)
+         }
+       }
+
+       p9 \<rightarrow> dangereux
+*)
+definition "p9= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 2)) (Print (Variable ''x''))  (Exec (Variable ''x''))))"
+
+(* p10= {
+         read(x)
+         if(x = 2) {
+            exec(x)
+         }else{
+            print(x)
+         }
+       }
+
+       p10 \<rightarrow> innofensif
+*)
+definition "p10= (Seq (Read ''x'') (If (Eq (Variable ''x'') (Constant 2)) (Exec (Variable ''x'')) (Print (Variable ''x''))))"
 
 
 (* Le type des evenements soit X: execute, soit P: print *)
@@ -264,7 +291,7 @@ where
 "san2 (If c s1 s2) = ((san2 s1) \<and> (san2 s2))"|
 "san2 _ = True"
 
-datatype absInt = Neg | Zero | Pos | Undef | Any
+datatype absInt = Neg | Zero | NonZero | Pos | Undef | Any
 
 type_synonym absSymTable= "(string * absInt) list"
 
@@ -283,7 +310,10 @@ where
 "absPlus Neg Pos = Any" |
 "absPlus Neg Neg = Neg" |
 "absPlus x Zero = x" |
-"absPlus Zero x = x"
+"absPlus Zero x = x" |
+"absPlus NonZero NonZero = NonZero" |
+"absPlus NonZero _ = Any" |
+"absPlus _ NonZero = Any" 
 
 fun absMinus::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
 where
@@ -297,9 +327,17 @@ where
 "absMinus Neg Neg = Any" |
 "absMinus x Zero = x" |
 "absMinus Zero Pos = Neg" |
-"absMinus Zero Neg = Pos"
+"absMinus Zero Neg = Pos" |
+"absMinus NonZero NonZero = NonZero" |
+"absMinus NonZero _ = Any" |
+"absMinus _ NonZero = Any" 
 
-(* Evaluation des conditions par rapport a une table de symboles *)
+(* return an absInt couple where the first correspond to the absInt of the variable if condition is true and the second if the condition is false *)
+fun evalCondition:: "condition \<Rightarrow> (string option*absInt*absInt)"
+  where
+"evalCondition (Eq (Variable x) (Constant c)) =(case toAbs c of Zero \<Rightarrow> (Some(x),Zero, NonZero) | _ \<Rightarrow> (Some(x), toAbs c, Any))" |
+"evalCondition c = (None, Any, Any)"
+
 (* return Neg : condition is false *) 
 (* return Pos : condition is true *) 
 (* return Zero : condition cannot be evaluated *)
@@ -310,6 +348,10 @@ where
 "evalAbsInt Zero Neg = Neg" |
 "evalAbsInt Pos Zero = Neg" |
 "evalAbsInt Neg Zero = Neg" |
+"evalAbsInt NonZero Zero = Neg" |
+"evalAbsInt Zero NonZero = Neg" |
+"evalAbsInt Pos NonZero = Pos" |
+"evalAbsInt Neg NonZero = Pos" |
 "evalAbsInt _ _ = Zero"
 
 fun priorities::" absInt \<Rightarrow> absInt \<Rightarrow> absInt"
@@ -352,9 +394,13 @@ where
 "evalSAbs (If c s1 s2) t =  (case evalCAbs c t of
                       Pos  \<Rightarrow> (evalSAbs s1 t)
                      |Neg \<Rightarrow> (evalSAbs s2 t)
-                     |Zero \<Rightarrow> (let (t1,b1) = (evalSAbs s1 t) in
-                              (let (t2, b2) = (evalSAbs s2 t) in 
-                                (mergeTwoAbsSymTable t1 t2 ,b1 \<and> b2))))" |
+                     |Zero \<Rightarrow> (case evalCondition c of
+                        (None, a1, a2) \<Rightarrow> (let (t1,b1) = (evalSAbs s1 t) in
+                                          (let (t2, b2) = (evalSAbs s2 t) in 
+                                            (mergeTwoAbsSymTable t1 t2 ,b1 \<and> b2)))
+                       |(Some(x), a1, a2) \<Rightarrow> (let (t1,b1) = (evalSAbs s1 ((x,a1)#t)) in
+                                             (let (t2, b2) = (evalSAbs s2 ((x,a2)#t)) in 
+                                              (mergeTwoAbsSymTable t1 t2 ,b1 \<and> b2))) ))" |
 "evalSAbs (Seq s1 s2) t= (let (t1,b1) = (evalSAbs s1 t) in
                               (let (t2, b2) = (evalSAbs s2 t1) in 
                                 (t2 ,b1 \<and> b2)))" |
@@ -377,7 +423,9 @@ value "san3 p4"
 value "san3 p5"
 value "san3 p6"
 value "san3 p7"
-value "sab3 p8"
+value "san3 p8"
+value "san3 p9"
+value "san3 p10"
 
 (*
 fun san3::"statement \<Rightarrow> bool"
